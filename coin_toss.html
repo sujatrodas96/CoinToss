@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coin Toss</title>
+</head>
+<body>
+  <div>
+    <label for="quantity">How many times to flip?</label>
+    <input type="number" id="quantity" min="1" value=1 />
+    
+    
+  </div>
+  <button id="flip" type="button">Flip the coin</button>
+  <div id="result"></div>
+  <script>
+    let button = document.getElementById("flip");
+    let result = document.getElementById("result");
+
+    function fnClick(event) {
+      let qty = document.getElementById("quantity").value;
+      let score = "";
+
+      for (let i = 0; i < qty; i++) {
+        let num = Math.random();
+
+        if (num < 0.5) {
+
+          score += '<input type="text" name="" placeholder="result" value="You got HEAD"> <br>';
+        } else {
+          score += '<input type="text" name="" placeholder="result" value="You got TAIL"> <br>';
+        }
+      }
+      result.innerHTML = score;
+    }
+
+    button.addEventListener("click", fnClick);
+  </script>
+</body>
+
+</html>
